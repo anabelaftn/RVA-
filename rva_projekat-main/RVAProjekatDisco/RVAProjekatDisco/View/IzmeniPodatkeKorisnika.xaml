@@ -1,0 +1,51 @@
+﻿<Window x:Class="RVAProjekatDisco.View.IzmeniPodatkeKorisnika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RVAProjekatDisco.View"
+        mc:Ignorable="d"
+        Title="" Height="291" Width="406.485" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowFrameBrush" StartPoint="0,0.5" EndPoint="1,0.5">
+            <GradientStop Color="CadetBlue" Offset="0.4"/>
+            <GradientStop Color="Gray" Offset="1"/>
+        </LinearGradientBrush>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="#50FFFFFF" CornerRadius="5" BorderBrush="{StaticResource WindowFrameBrush}" BorderThickness="3,0,3,3">
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/slike/background.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content=" Izmena podataka" Foreground="White" FontSize="27" HorizontalAlignment="Left" Margin="80,26,0,0" VerticalAlignment="Top" Width="239" Height="46"/>
+
+            <Label Content="Ime:" Foreground="White" HorizontalAlignment="Left" Margin="66,121,0,0" VerticalAlignment="Top" Height="25" Width="32"/>
+            <Label Content="Prezime:" Foreground="White" HorizontalAlignment="Left" Margin="64,154,0,0" VerticalAlignment="Top" Height="25" Width="55"/>
+            <Label Content="Korisničko ime:" Foreground="White" HorizontalAlignment="Left" Margin="64,91,0,0" VerticalAlignment="Top" Height="25" Width="94"/>
+
+            <TextBox Name="ImeTextBox" HorizontalAlignment="Left" Height="25" Margin="163,122,0,0" TextWrapping="Wrap" Text="{Binding InformacijeKorisnika.Ime}" VerticalAlignment="Top" Width="165"/>
+            <TextBox Name="PrezimeTextBox" HorizontalAlignment="Left" Height="25" Margin="163,154,0,0" TextWrapping="Wrap" Text="{Binding InformacijeKorisnika.Prezime}" VerticalAlignment="Top" Width="165"/>
+            <TextBox Name="KorisnickoImeTextBox" HorizontalAlignment="Left" Height="25" Margin="163,91,0,0" TextWrapping="Wrap" Text="{Binding InformacijeKorisnika.KorisnickoIme}" VerticalAlignment="Top" Width="165" IsEnabled="False"/>
+
+            <Button Name="IzmjeneKorisnikaDugme" Foreground="White" Background="Gray" Content="Potvrdi" HorizontalAlignment="Left" Margin="218,220,0,0" VerticalAlignment="Top" Width="110" Height="30"  Command="{Binding SacuvajKomanda}"/>
+
+            <Button Name="ZatvoriDugme" Foreground="White" Background="Gray" Content="Otkaži" HorizontalAlignment="Left" Margin="66,220,0,0" VerticalAlignment="Top" Width="110" Height="30"  Command="{Binding OtkaziKomanda}"/>
+        </Grid>
+    </Border>
+</Window>

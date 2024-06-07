@@ -1,0 +1,27 @@
+﻿<Window x:Class="RVAProjekatDisco.View.NevalidanUnos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RVAProjekatDisco.View"
+        mc:Ignorable="d"
+        Title="GREŠKA" Height="140" Width="216" ResizeMode="NoResize" WindowStyle="None" BorderBrush="Black" Background="Red" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Unesite validne podatke!" FontWeight="Bold" FontSize="15" HorizontalAlignment="Stretch" Margin="18,38,9.8,0" VerticalAlignment="Top" Height="29"/>
+        <Button  Name="NazadDugme" Content="OK" FontWeight="Bold" HorizontalAlignment="Left" Margin="63,81,0,0" VerticalAlignment="Top" Width="90" Height="28" Click="NazadDugme_Click" RenderTransformOrigin="-0.085,0.096"/>
+
+    </Grid>
+</Window>
